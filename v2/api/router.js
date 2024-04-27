@@ -5,7 +5,7 @@ router.use(express.static('static'));
 router.use(express.urlencoded({extended: true}));
 
 const path = require('path');
-const html_dir = path.join(__dirname ,'./views/');
+const html_dir = path.join(__dirname ,'../views/');
 
 // base
 router.get('/', (req, res) => {
