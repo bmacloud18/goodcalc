@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // Designate the static folder as serving static resources
-app.use(express.static(__dirname + '../static'));
+app.use(express.static(__dirname + './static/'));
 app.use(express.urlencoded({extended: true}));
 
 const frontendRoutes = require( './router' );
