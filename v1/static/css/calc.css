@@ -1,0 +1,257 @@
+.container {  display: grid;
+  grid-template-columns: 0.2fr 1.2fr .2fr;
+  grid-template-rows: 0.2fr 1.5fr 0.2fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". main ."
+    ". . .";
+    min-width: 1200px;
+}
+
+.main {  display: grid;
+  grid-template-columns: 0.1fr 2.7fr 0.1fr;
+  grid-template-rows: 0.1fr 2.8fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". center ."
+    ". . .";
+  grid-area: main;
+  background-color: rgb(138, 199, 138);
+  border: 3px outset purple;
+  height: 600px;
+  max-height: 600px;
+  max-width: 1000px;
+}
+
+.center {  display: grid;
+  grid-template-columns: .6fr 0.4fr;
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "calculator history";
+  grid-area: center;
+}
+
+.calculator {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr .8fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "inputbox"
+    "buttons";
+  grid-area: calculator;
+  border: outset 5px darkgrey;
+  border-radius: 5px;
+  min-width: 100%;
+}
+
+.inputbox { 
+  grid-area: inputbox;
+  text-align: right;
+  max-width: 100%;
+  background-color: darkgrey;
+ }
+
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+ }
+
+
+.buttons { 
+  grid-area: buttons; 
+  border: 5px solid darkgrey;
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "row1"
+    "row2"
+    "row3"
+    "row4"
+    "row5";
+}
+/* 
+.buttons > div {
+  border: 1px dashed;
+} */
+
+.row1 { 
+  grid-area: row1;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+}
+
+.row2 { 
+  grid-area: row2;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+}
+.row3 { 
+  grid-area: row3;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+}
+.row4 { 
+  grid-area: row4;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+}
+
+.row5 {
+  display: grid; 
+  grid-template-columns: .5fr .5fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 5px; 
+  grid-template-areas: 
+    "leftarea rightarea"; 
+  grid-area: row5; 
+}
+
+.leftarea {
+  grid-area: leftarea; 
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:flex-end;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+}
+.rightarea { 
+  grid-area: rightarea;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  align-items:center;
+  align-content:center;
+  gap: 5px;
+ }
+
+.input {
+  text-align: right;
+  min-width: 99%;
+  height: 100%;
+  font-size: 25pt;
+  border: 1px darkgrey;
+  pointer-events: none;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  font-size: 20pt;
+  border: 2px solid;
+}
+
+button:hover {
+  filter: brightness(75%);
+}
+
+.period:focus {
+  filter: brightness(75%);
+}
+
+.mod:focus {
+  filter: brightness(75%);
+}
+
+.divide:focus {
+  filter: brightness(75%);
+}
+
+.times:focus {
+  filter: brightness(75%);
+}
+
+.plus:focus {
+  filter: brightness(75%);
+}
+
+.minus:focus {
+  filter: brightness(75%);
+}
+
+
+
+.num {
+  background-color: aliceblue;
+}
+
+.row5 .eq {
+  background-color: rgb(238, 141, 15);
+  width: 210px;
+}
+
+button {
+  background-color: rgb(218, 172, 113);
+}
+
+.history { 
+  grid-area: history;
+  border: outset 5px darkgrey;
+  max-height: 550px;
+  max-width: 550px;
+  min-width: 200px;
+  border-radius: 5px;
+  min-width: 100%;
+}
+
+.clearbtncontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.clear {
+  width: 50px;
+  height: 25px;
+  font-size: 6pt;
+  border-radius: 1px;
+  background-color: aliceblue;
+}
+
+.historyList {
+  list-style-type: none;
+  font-size: 12pt;
+  overflow-y: scroll;
+  height: 93.5%;
+  border: 5px solid darkgrey;
+  border-left: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+li {
+  font-size: 16pt;
+}
