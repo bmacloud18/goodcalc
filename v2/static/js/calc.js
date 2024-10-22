@@ -69,22 +69,22 @@ function evaluateNumbers (num1, num2, expression) {
 }
 
 function add(num1, num2) {
-    return num1 + num2;
+    return Math.round((num1 + num2) * 1000) / 1000;
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return Math.round((num1 - num2) * 1000) / 1000;
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return Math.round((num1 * num2) * 1000) / 1000;
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    return Math.round((num1 / num2) * 1000) / 1000;
 }
 function mod(num1, num2) {
-    return num1 % num2;
+    return Math.round((num1 % num2) * 1000) / 1000;
 }
 
 function buildNumber (digit) {
@@ -136,9 +136,12 @@ function buildNumber (digit) {
         }
         else {
             y = (y * (10 ** decimals) + digit) / (10 ** decimals);
-            if (justEvaled) {
-                input.value = y;
-            }
+            //was causing bug where second value didn't show decimal points, will revert or continue 
+            //to work on if this causes a different error
+            // if (justEvaled) {
+            //     input.value = y;
+            // }
+            input.value = y;
         }
     }
     justEvaled = false;
